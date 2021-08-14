@@ -1,23 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
 
 :root {
-    --subheading: hsl(276, 100%, 81%);
-    --msg-left: hsl(276, 55%, 52%);
-    --msg-right: hsl(271, 15%, 43%);
-    --placeholder-text: hsl(206, 6%, 79%);
-    --main-heading: hsl(271, 36%, 24%);
-    --paragraph: hsl(270, 7%, 64%);
-    --app-background: hsl(270, 20%, 96%);
-    --submit-btn: hsl(271, 36%, 24%);
-    --radio-btn: hsl(289, 100%, 72%);
-
-    --gradient: linear-gradient(from bottom right hsl(293, 100%, 63%), hsl(264, 100%, 61%));
+  --subheading: hsl(276, 100%, 81%);
+  --msg-left: hsl(276, 55%, 52%);
+  --msg-right: hsl(271, 15%, 43%);
+  --placeholder-text: hsl(206, 6%, 79%);
+  --main-heading: hsl(271, 36%, 24%);
+  --paragraph: hsl(270, 7%, 64%);
+  --app-background: hsl(270, 20%, 96%);
+  --submit-btn: hsl(271, 36%, 24%);
+  --radio-btn: hsl(289, 100%, 72%);
+ 
+  --gradient-light: hsl(293, 100%, 63%);
+  --gradient-dark: hsl(264, 100%, 61%);
 }
 
 html,
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Rubik', sans-serif;
-    font-size: 16px;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
 }
+
+.display-container {
+  position: relative;
+  margin: 3rem auto;
+  width: 278px;
+  height: 588px;
+  background-color: var(--app-background);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.45);
+  border: 10px solid white;
+  border-radius: 40px;
+}
+
+.display-container::before {
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    position: absolute;
+    content: '';
+    background-color: white;
+    width: 55%;
+    height: 20px;
+    border-radius: 0px 0px 12px 12px;
+    z-index: 2;
+}
+
+.inner-container {
+    width: 278;
+    height: 80px;
+    background-image: linear-gradient(to right, var(--gradient-dark), var(--gradient-light));
+    border-radius: 30px 30px 6px 6px;
+    box-shadow: 0 3px 3px rgba(0,0,0,.1);
+}
+
