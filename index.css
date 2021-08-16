@@ -51,7 +51,7 @@ body::after {
   bottom: 0;
   right: -180px;
   border-radius: 500px 500px 0px 0px;
-  opacity: .03;
+  opacity: 0.03;
 }
 
 main {
@@ -286,4 +286,23 @@ span {
   height: 15px;
   filter: invert(1);
   transform: rotate(180deg);
+}
+
+@media (max-width: 700px) {
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-container {
+    margin: 0;
+    padding: 0;
+    width: 65%;
+    text-align: center;
+    margin: 3rem auto;
+  }
 }
