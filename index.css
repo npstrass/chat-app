@@ -23,17 +23,50 @@ body {
   font-size: 16px;
 }
 
+body {
+  position: relative;
+}
+
+body::before {
+  position: absolute;
+  top: 0;
+  left: -40px;
+  content: "";
+  width: 35%;
+  height: 85%;
+  background-image: linear-gradient(
+    to top right,
+    var(--gradient-dark),
+    var(--gradient-light)
+  );
+  border-radius: 0px 0px 500px 500px;
+}
+
 main {
   display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .text-container {
-  width: 40%;
+  width: 30%;
+  text-align: left;
+  margin-left: 10rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--main-heading);
+}
+
+.text-container p {
+  color: var(--paragraph);
 }
 
 .display-container {
   position: relative;
-  margin: 3rem auto;
   width: 278px;
   height: 588px;
   background-color: var(--app-background);
@@ -121,7 +154,7 @@ main {
   position: absolute;
   bottom: 35px;
   right: 50%;
-  transform: translateX(50%) scale(.85);
+  transform: translateX(50%) scale(0.85);
   width: 300px;
   height: 508px;
   display: flex;
@@ -147,7 +180,7 @@ main {
   width: fit-content;
   font-size: 12px;
   padding: 8px;
-  box-shadow: 0 3px 6px rgba(0,0,0,.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .msg-left {
@@ -203,7 +236,7 @@ span {
   position: relative;
   font-size: 14px;
   width: 275px;
-  padding: .75rem;
+  padding: 0.75rem;
   border-radius: 50px;
   margin-top: 12px;
   background-color: white;
@@ -215,7 +248,7 @@ span {
 }
 
 .input-container p {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .button {
@@ -227,11 +260,11 @@ span {
   top: 50%;
   right: 7.5px;
   transform: translateY(-50%);
-  content: '';
+  content: "";
   background-color: var(--submit-btn);
   width: 10px;
   height: 10px;
-  padding: .75rem;
+  padding: 0.75rem;
   border-radius: 50%;
 }
 
@@ -241,4 +274,3 @@ span {
   filter: invert(1);
   transform: rotate(180deg);
 }
-
