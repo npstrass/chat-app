@@ -27,10 +27,9 @@ body {
   position: relative;
 }
 
-body::before {
+body::before,
+body::after {
   position: absolute;
-  top: 0;
-  left: -40px;
   content: "";
   width: 35%;
   height: 85%;
@@ -39,7 +38,20 @@ body::before {
     var(--gradient-dark),
     var(--gradient-light)
   );
+  z-index: -99;
+}
+
+body::before {
+  top: 0;
+  left: -40px;
   border-radius: 0px 0px 500px 500px;
+}
+
+body::after {
+  bottom: 0;
+  right: -180px;
+  border-radius: 500px 500px 0px 0px;
+  opacity: .03;
 }
 
 main {
