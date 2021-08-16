@@ -23,6 +23,14 @@ body {
   font-size: 16px;
 }
 
+main {
+  display: flex;
+}
+
+.text-container {
+  width: 40%;
+}
+
 .display-container {
   position: relative;
   margin: 3rem auto;
@@ -111,7 +119,10 @@ body {
 
 .container {
   position: absolute;
-  width: 278px;
+  bottom: 35px;
+  right: 50%;
+  transform: translateX(50%) scale(.85);
+  width: 300px;
   height: 508px;
   display: flex;
   flex-direction: column;
@@ -136,28 +147,36 @@ body {
   width: fit-content;
   font-size: 12px;
   padding: 8px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.1);
 }
 
 .msg-left {
-  background-color: aquamarine;
+  color: var(--msg-left);
+  background-color: hsla(276, 55%, 52%, 0.15);
   border-radius: 12px 12px 12px 4px;
 }
 
 .msg-right {
-  background-color: coral;
+  color: var(--msg-right);
   border-radius: 12px 12px 4px 12px;
   align-self: flex-end;
 }
 
 .action-left {
+  color: white;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 150px;
+  width: 180px;
   font-size: 12px;
-  border: 1px solid;
-  padding: .5rem;
+  border-radius: 12px 12px 12px 4px;
+  background-image: linear-gradient(
+    to left,
+    var(--gradient-dark),
+    var(--gradient-light)
+  );
+  padding: 0.25rem;
   padding-left: 2.5rem;
   margin: 6px 0;
 }
@@ -165,13 +184,13 @@ body {
 .action-left::before {
   position: absolute;
   top: 50%;
-  left: .5rem;
+  left: 0.5rem;
   transform: translateY(-50%);
-  content: '';
+  content: "";
   height: 20px;
   width: 20px;
   border-radius: 50%;
-  border: 1px solid blue;
+  border: 1px solid white;
 }
 
 span {
@@ -179,3 +198,47 @@ span {
   font-weight: 700;
   text-align: right;
 }
+
+.input-container {
+  position: relative;
+  font-size: 14px;
+  width: 275px;
+  padding: .75rem;
+  border-radius: 50px;
+  margin-top: 12px;
+  background-color: white;
+}
+
+.input-container > * {
+  padding: 0;
+  margin: 0;
+}
+
+.input-container p {
+  opacity: .5;
+}
+
+.button {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  right: 7.5px;
+  transform: translateY(-50%);
+  content: '';
+  background-color: var(--submit-btn);
+  width: 10px;
+  height: 10px;
+  padding: .75rem;
+  border-radius: 50%;
+}
+
+.button img {
+  width: 15px;
+  height: 15px;
+  filter: invert(1);
+  transform: rotate(180deg);
+}
+
