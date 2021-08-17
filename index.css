@@ -299,6 +299,7 @@ span {
   }
 
   .container {
+    bottom: 45px;
     transform: translateX(50%) scale(0.83);
   }
 
